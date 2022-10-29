@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myshop/ui/cart/cart_screen.dart';
 import 'ui/products/products_manager.dart';
 import 'ui/products/product_detail_screen.dart';
-
+import 'ui/products/product_overview_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -18,16 +19,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Lato',
         colorScheme: ColorScheme.fromSwatch(
-        primarySwatch: Colors.purple,
-      ).copyWith(
-        secondary: Colors.deepOrange,
+           primarySwatch: Colors.purple,
+        ).copyWith(
+          secondary: Colors.deepOrange,
+       ),
       ),
-    ),
-    home: SafeArea(
-      child: ProductDetailScreen(
-        ProductsManager().items[0],
-      ),
-    ),
+      home:  const SafeArea(
+        child: CartScreen(),
+       
+
+        ),
+      
+    
     );
   }
 }
